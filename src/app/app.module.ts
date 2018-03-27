@@ -1,6 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AgmCoreModule } from '@agm/core';
 import {
 	MatButtonModule, 
 	MatCheckboxModule, 
@@ -24,6 +25,9 @@ import { AppComponent, GoogleMapDialog } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBv5WVbMk9_C26b4JboXL0IvJieLZoyKfI'
+    }),
     MatButtonModule, 
     MatCheckboxModule,
     MatDialogModule,

@@ -27,6 +27,8 @@ export class AppComponent {
 
 export class GoogleMapDialog {
   constructor(public dialogRef: MatDialogRef<GoogleMapDialog>) { }
+  lat: number = 51.678418;
+  lng: number = 7.809007;
 }
 
 export interface LocationsDetails {
