@@ -18,7 +18,7 @@ export class AppComponent  {
 	) { }
 
 	openEditDialog() {
-		let dialogRef = this.dialog.open(GoogleMapDialog, { width: '80%', height: '60%'});
+		let dialogRef = this.dialog.open(GoogleMapDialog, { width: '80%', height: '80%'});
 
 		dialogRef.afterClosed().subscribe(result => {
 		  dialogRef = null;
