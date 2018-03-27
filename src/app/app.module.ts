@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import {
@@ -26,7 +27,8 @@ import { AppComponent, GoogleMapDialog } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBv5WVbMk9_C26b4JboXL0IvJieLZoyKfI'
+      apiKey: 'AIzaSyBgBy_DHNpUMeEMYPlN7hrtpzCNZQ8sFDI',
+      libraries: ["places"]
     }),
     MatButtonModule, 
     MatCheckboxModule,
@@ -35,7 +37,9 @@ import { AppComponent, GoogleMapDialog } from './app.component';
     MatCardModule,
   	MatGridListModule,
   	MatInputModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   entryComponents: [GoogleMapDialog],

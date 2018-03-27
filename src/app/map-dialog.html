@@ -1,41 +1,19 @@
 <h2 mat-dialog-title>Google Map</h2>
 <mat-dialog-content>
-   <mat-grid-list cols="12">
-		<mat-grid-tile >
-			
-
-<agm-map 
-[latitude]="lat"
-[longitude]="lng"
-[zoom]="zoom"
-[disableDefaultUI]="false"
-[zoomControl]="false"
-(mapClick)="mapClicked($event)">
-
-<agm-marker 
-  *ngFor="let m of markers; let i = index"
-  (markerClick)="clickedMarker(m.label, i)"
-  [latitude]="m.lat"
-  [longitude]="m.lng"
-  [label]="m.label"
-  [markerDraggable]="m.draggable"
-  (dragEnd)="markerDragEnd(m, $event)">
-  
-<agm-info-window>
-  <strong>InfoWindow content</strong>
-</agm-info-window>
-
-</agm-marker>
-
-<agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
-  [radius]="5000"
-  [fillColor]="'red'"
-  [circleDraggable]="true"
-  [editable]="true">
-</agm-circle>
-
-</agm-map>
-		</mat-grid-tile>
-		<mat-grid-tile >2</mat-grid-tile>
-	</mat-grid-list>
+	<div class="row">
+		<div class="col-md-8">
+		<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+		  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+		</agm-map>
+		</div>
+		<div class="col-md-4">
+			<div class="mapDetailsContent">
+				<h4>Map Selection tools</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+				<input  type="search" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+				<button mat-raised-button color="warn">Confirm Selection</button>
+				<button mat-raised-button color="primary">Reset Selection</button>
+			</div>
+		</div>
+	</div>
 </mat-dialog-content>
